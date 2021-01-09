@@ -3,21 +3,36 @@
 #' Compiled according to http://docs.cntd.ru/document/1200107843
 #'
 #' @noRd
-g25543db <- function(){
+
+fmt <- function(n)
+  sprintf("%02i", n)
+
+"%u%" <- function(s1, s2)
+  as.vector(outer(s1, s2, paste0))
+
+mk_code <- function(x){
+  x[["code"]] <- do.call(
+    function(Class, Category, Type, Subtype)
+      fmt(Class) %u% Category %u% fmt(Type) %u% fmt(Subtype),
+    x[["qualifier"]]
+  )
+  x
+}
+
+g25543db <- function() {
   all_classes <- 2:50
   all_categories <- 0:7
   all_types <- sort(unique(c(
     seq(10, 60, 10), seq(8, 48, 2),
     seq(5, 20, 5)
   )))
-  all_subtypes <- sort(unique(c(
-    seq(5, 20, 5), 0, 1, 6:70,
-    seq(20, 70, 10)
-  )))
+  all_subtypes <- sort(unique(c(seq(5, 20, 5), 0, 1, 6:70,
+                                seq(20, 70, 10))))
 
-  list(
+  db <- list(
     # Brown ----
-    brown = list(# begin brown coals
+    brown = list(
+      # begin brown coals
       # E, 1E =====
       G1Ex = list(
         id = c("\u0411", "1\u0411", NA, "E", "1E", NA),
@@ -78,10 +93,12 @@ g25543db <- function(){
           )
 
       )
-    ), # end brown coals
+    ),
+    # end brown coals
 
     # Hard ----
-    hard = list( # begin hard coals
+    hard = list(
+      # begin hard coals
       # D, DB =====
       SDB04x = list(
         id = c("\u0414", NA, "\u0414\u0412", "D", NA, "DB"),
@@ -259,8 +276,14 @@ g25543db <- function(){
 
       # GXO, 1GXO, 1GXOB =====
       S1GXOBx = list(
-        id = c("\u0413\u0416\u041E", "1\u0413\u0416\u041E",
-               "1\u0413\u0416\u041E\u0412", "GXO", "1GXO", "1GXOB"),
+        id = c(
+          "\u0413\u0416\u041E",
+          "1\u0413\u0416\u041E",
+          "1\u0413\u0416\u041E\u0412",
+          "GXO",
+          "1GXO",
+          "1GXOB"
+        ),
         qualifier = list(
           Class = 6:7,
           Category = 0:3,
@@ -271,8 +294,14 @@ g25543db <- function(){
 
       # GXO, 1GXO, 1GXOF =====
       S1GXOFx = list(
-        id = c("\u0413\u0416\u041E", "1\u0413\u0416\u041E",
-               "1\u0413\u0416\u041E\u0424", "GXO", "1GXO", "1GXOF"),
+        id = c(
+          "\u0413\u0416\u041E",
+          "1\u0413\u0416\u041E",
+          "1\u0413\u0416\u041E\u0424",
+          "GXO",
+          "1GXO",
+          "1GXOF"
+        ),
         qualifier =
           list(
             Class = 6:7,
@@ -285,8 +314,14 @@ g25543db <- function(){
 
       # GXO, 2GXO, 2GXOB =====
       S2GXOB30x = list(
-        id = c("\u0413\u0416\u041E", "2\u0413\u0416\u041E",
-               "2\u0413\u0416\u041E\u0412", "GXO", "2GXO", "2GXOB"),
+        id = c(
+          "\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E\u0412",
+          "GXO",
+          "2GXO",
+          "2GXOB"
+        ),
         qualifier = list(
           Class = 8:9,
           Category = 0:3,
@@ -296,8 +331,14 @@ g25543db <- function(){
       ),
 
       S2GXOB36x = list(
-        id = c("\u0413\u0416\u041E", "2\u0413\u0416\u041E",
-               "2\u0413\u0416\u041E\u0412", "GXO", "2GXO", "2GXOB"),
+        id = c(
+          "\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E\u0412",
+          "GXO",
+          "2GXO",
+          "2GXOB"
+        ),
         qualifier = list(
           Class = 8,
           Category = 0:3,
@@ -308,8 +349,14 @@ g25543db <- function(){
 
       # GXO, 2GXO, 2GXOF =====
       S2GXOF30x = list(
-        id = c("\u0413\u0416\u041E", "2\u0413\u0416\u041E",
-               "2\u0413\u0416\u041E\u0424", "GXO", "2GXO", "2GXOF"),
+        id = c(
+          "\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E\u0424",
+          "GXO",
+          "2GXO",
+          "2GXOF"
+        ),
         qualifier =
           list(
             Class = 8:9,
@@ -320,8 +367,14 @@ g25543db <- function(){
 
       ),
       S2GXOF36x = list(
-        id = c("\u0413\u0416\u041E", "2\u0413\u0416\u041E",
-               "2\u0413\u0416\u041E\u0424", "GXO", "2GXO", "2GXOF"),
+        id = c(
+          "\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E",
+          "2\u0413\u0416\u041E\u0424",
+          "GXO",
+          "2GXO",
+          "2GXOF"
+        ),
         qualifier =
           list(
             Class = 8,
@@ -516,8 +569,14 @@ g25543db <- function(){
 
       # KO, 1KO, 1KOB =====
       S1KOBx = list(
-        id = c("\u041A\u041E", "1\u041A\u041E", "1\u041A\u041E\u0412",
-               "KO", "1KO", "1KOB"),
+        id = c(
+          "\u041A\u041E",
+          "1\u041A\u041E",
+          "1\u041A\u041E\u0412",
+          "KO",
+          "1KO",
+          "1KOB"
+        ),
         qualifier = list(
           Class = 8:11,
           Category = 0:3,
@@ -528,8 +587,14 @@ g25543db <- function(){
 
       # KO, 1KO, 1KOF =====
       S1KOF1x = list(
-        id = c("\u041A\u041E", "1\u041A\u041E", "1\u041A\u041E\u0424",
-               "KO", "1KO", "1KOF"),
+        id = c(
+          "\u041A\u041E",
+          "1\u041A\u041E",
+          "1\u041A\u041E\u0424",
+          "KO",
+          "1KO",
+          "1KOF"
+        ),
         qualifier =
           list(
             Class = 8:9,
@@ -541,8 +606,14 @@ g25543db <- function(){
       ),
 
       S1KOF2x = list(
-        id = c("\u041A\u041E", "1\u041A\u041E", "1\u041A\u041E\u0424",
-               "KO", "1KO", "1KOF"),
+        id = c(
+          "\u041A\u041E",
+          "1\u041A\u041E",
+          "1\u041A\u041E\u0424",
+          "KO",
+          "1KO",
+          "1KOF"
+        ),
         qualifier =
           list(
             Class = 10:11,
@@ -555,8 +626,14 @@ g25543db <- function(){
 
       # KO, 2KO, 2KOB =====
       S2KOB11x = list(
-        id = c("\u041A\u041E", "2\u041A\u041E", "2\u041A\u041E\u0412",
-               "KO", "2KO", "2KOB"),
+        id = c(
+          "\u041A\u041E",
+          "2\u041A\u041E",
+          "2\u041A\u041E\u0412",
+          "KO",
+          "2KO",
+          "2KOB"
+        ),
         qualifier = list(
           Class = 11,
           Category = 0:3,
@@ -566,8 +643,14 @@ g25543db <- function(){
       ),
 
       S2KOB12x = list(
-        id = c("\u041A\u041E", "2\u041A\u041E", "2\u041A\u041E\u0412",
-               "KO", "2KO", "2KOB"),
+        id = c(
+          "\u041A\u041E",
+          "2\u041A\u041E",
+          "2\u041A\u041E\u0412",
+          "KO",
+          "2KO",
+          "2KOB"
+        ),
         qualifier = list(
           Class = 12,
           Category = 0:3,
@@ -577,8 +660,14 @@ g25543db <- function(){
       ),
 
       S2KOB13x = list(
-        id = c("\u041A\u041E", "2\u041A\u041E", "2\u041A\u041E\u0412",
-               "KO", "2KO", "2KOB"),
+        id = c(
+          "\u041A\u041E",
+          "2\u041A\u041E",
+          "2\u041A\u041E\u0412",
+          "KO",
+          "2KO",
+          "2KOB"
+        ),
         qualifier = list(
           Class = 13,
           Category = 0:3,
@@ -589,8 +678,13 @@ g25543db <- function(){
 
       # KO, 2KO, 2KOF =====
       S2KOF11x = list(
-        id = c("\u041A\u041E", "2\u041A\u041E", "2\u041A\u041E\u0424",
-               "KO", "2KO", "2KOF"
+        id = c(
+          "\u041A\u041E",
+          "2\u041A\u041E",
+          "2\u041A\u041E\u0424",
+          "KO",
+          "2KO",
+          "2KOF"
         ),
         qualifier =
           list(
@@ -603,8 +697,14 @@ g25543db <- function(){
       ),
 
       S2KOF12x = list(
-        id = c("\u041A\u041E", "2\u041A\u041E", "2\u041A\u041E\u0424",
-               "KO", "2KO", "2KOF"),
+        id = c(
+          "\u041A\u041E",
+          "2\u041A\u041E",
+          "2\u041A\u041E\u0424",
+          "KO",
+          "2KO",
+          "2KOF"
+        ),
         qualifier =
           list(
             Class = 12,
@@ -1048,10 +1148,12 @@ g25543db <- function(){
           )
 
       )
-    ), # end of hard coals
+    ),
+    # end of hard coals
 
     # Anthracite ----
-    anthr = list( # begin anthracite coals
+    anthracite = list(
+      # begin anthracite coals
       # A, 1A, 1AB =====
       S1ABx = list(
         id = c("\u0410", "1\u0410", "1\u0410\u0412", "A", "1A", "1AB"),
@@ -1131,4 +1233,9 @@ g25543db <- function(){
       )
     ) # end anthracite coals
   )
+
+  db[["brown"]] <- lapply(db[["brown"]], mk_code)
+  db[["hard"]]  <- lapply(db[["hard"]],  mk_code)
+  db[["anthracite"]] <- lapply(db[["anthracite"]], mk_code)
+  db
 }

@@ -1,6 +1,6 @@
 Package: coal.state
 Type: Package
-Title: Classification, basis recalculation and conventional qualimetry of solid fules
+Title: Classification, basis recalculation and conventional qualimetry of fossil solid fuels
 Version: 0.1.0
 Author: Yuri Possokhov
 Maintainer: Yuri Possokhov <possokhoffM@gmail.com>
@@ -9,4 +9,5 @@ License: GPL-3
 Encoding: UTF-8
 LazyData: true
 Depends: R (>= 3.5.0)
+Imports: checkmate
 RoxygenNote: 7.1.1
