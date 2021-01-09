@@ -1,7 +1,7 @@
 #' Determine the form of fossil fuels in accordance with GOST 25543
 #'
 #' Using rules prescribed by
-#' \href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (table 2)
+#' \href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (\emph{Table 2})
 #' determine the form of fossil fuels that could be classified as \emph{brown} or
 #' \emph{hard} coal, or \emph{anthracite}.
 #'
@@ -28,7 +28,7 @@
 #'     \item \code{hard}
 #'     \item \code{anthracite}
 #'   }
-#'  Type: [\code{choice}, \code{character}].
+#'  Type: [\code{character}].
 #'
 #' @export
 #'
@@ -60,7 +60,7 @@
 #' )
 
 fuel <- function(r = 1.3, qsaf = NA, vdaf = NA){
-  checkmate::assert_double(r, 0, 5, any.missing = FALSE, min.len = 1)
+  checkmate::assert_double(r, 0, 7, any.missing = FALSE, min.len = 1)
   n <- length(r)
   checkmate::assert_double(qsaf, 0, 40, len = n)
   checkmate::assert_double(vdaf, 0, 100, len = n)

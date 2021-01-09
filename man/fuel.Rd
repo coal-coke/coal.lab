@@ -27,11 +27,11 @@ Identifier of fossil fuel form:
     \item \code{hard}
     \item \code{anthracite}
   }
- Type: [\code{choice}, \code{character}].
+ Type: [\code{character}].
 }
 \description{
 Using rules prescribed by
-\href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (table 2)
+\href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (\emph{Table 2})
 determine the form of fossil fuels that could be classified as \emph{brown} or
 \emph{hard} coal, or \emph{anthracite}.
 }
