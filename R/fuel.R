@@ -33,10 +33,10 @@
 #' @export
 #'
 #' @examples
-#' coalform()
+#' fuel()
 #' # [1] "hard"
 #'
-#' coalform(c(0.3, 1.3), c(20, NA), c(8, NA))
+#' fuel(c(0.3, 1.3), c(20, NA), c(8, NA))
 #' # [1] "brown" "hard"
 #'
 #' # dummy test:
@@ -56,10 +56,10 @@
 #'     2.3,     ,  28,hard,Hard coal in ambiguous hard-anthracite zone
 #'     2.3,     ,   6,anthracite,Anthracite coal in ambiguous hard-anthracite zone"
 #'   ),
-#'   stopifnot(all(coalform(R0, Qsdaf, Vdaf) == Form))
+#'   stopifnot(all(fuel(R0, Qsdaf, Vdaf) == Form))
 #' )
 
-coalform <- function(r = 1.3, qsaf = NA, vdaf = NA){
+fuel <- function(r = 1.3, qsaf = NA, vdaf = NA){
   checkmate::assert_double(r, 0, 5, any.missing = FALSE, min.len = 1)
   n <- length(r)
   checkmate::assert_double(qsaf, 0, 40, len = n)
