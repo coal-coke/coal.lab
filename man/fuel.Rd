@@ -8,16 +8,15 @@ fuel(r = 1.3, qsaf = NA, vdaf = NA)
 }
 \arguments{
 \item{r}{reflectance of vitrinite, [\emph{\%}], measured in accordance with
-\href{https://www.iso.org/standard/42832.html}{ISO 7404-5}.
+\strong{ISO 7404-5}.
 Type: [\code{double}].}
 
 \item{qsaf}{gross calorific value, [\emph{MJ/kg}] or [\emph{J/g}], measured in
-accordance with \href{https://www.iso.org/standard/41592.html}{ISO 1928}
+accordance with \strong{ISO 1928}
 and recalculated on moisture ash-free basis. Type: [\code{double}].}
 
 \item{vdaf}{volatile matter yield, [\emph{\%}], measured in accordance with
-\href{https://www.iso.org/standard/55943.html}{ISO 562} or
-\href{https://www.iso.org/standard/63045.html}{ISO 5071-1} and recalculated
+\strong{ISO 562} or \strong{ISO 5071-1} and recalculated
 on dry ash-free basis. Type: [\code{double}].}
 }
 \value{
@@ -42,7 +41,7 @@ fuel()
 fuel(c(0.3, 1.3), c(20, NA), c(8, NA))
 # [1] "brown" "hard"
 
-# dummy test:
+# building test:
 with(
   read.csv(text =
    "R0, Qsdaf,Vdaf,Form,Comment

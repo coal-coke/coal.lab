@@ -6,7 +6,7 @@
 #' all \emph{fusinite} fractions. The next \emph{fusinite} fractions may be
 #' considered:
 #' \describe{
-#'   \item{\emph{inertinite}}{determined in accordance with \href{https://www.iso.org/standard/42831.html}{ISO 7404-3}}
+#'   \item{\emph{inertinite}}{determined in accordance with \strong{ISO 7404-3}}
 #'   \item{two thirds of \emph{semivitrinite}}{determined in accordance with \href{http://docs.cntd.ru/document/1200105478}{GOST R 55662}}
 #' }
 #'
@@ -21,10 +21,17 @@
 #' @export
 #'
 #' @examples
-#'   fuelcat(c(5.0, 10, 59, 80))
+#'   fuel_cat(c(5.0, 10, 59, 80))
 #'   # [1] "0" "1" "5" "7"
+#'
+#'   # building test:
+#'   stopifnot(
+#'     all(
+#'       fuel_cat(c(5.0, 10, 59, 80)) == c("0", "1", "5", "7")
+#'     )
+#'   )
 
-fuelcat <- function(sok){
+fuel_cat <- function(sok){
   checkmate::assert_numeric(sok, 0, 100, any.missing = FALSE, min.len = 1)
   sok <- round(sok)
   sprintf(

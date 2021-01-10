@@ -6,7 +6,7 @@
 #'
 #' @param r
 #'   reflectance of vitrinite, [\emph{\%}], measured in accordance with
-#'   \href{https://www.iso.org/standard/42832.html}{ISO 7404-5}.
+#'   \strong{ISO 7404-5}.
 #'   Type: [\code{double}].
 #'
 #' @return
@@ -17,10 +17,18 @@
 #' @export
 #'
 #' @examples
-#' fuelclass(c(0.20, 0.52, 1.3, 4.99, 4.998))
+#' fuel_class(c(0.20, 0.52, 1.3, 4.99, 4.998))
 #' # [1] "02" "05" "13" "49" "50"
 #'
-fuelclass <- function(r){
+#' # building test:
+#' stopifnot(
+#'   all(
+#'     fuel_class(c(0.20, 0.52, 1.3, 4.99, 4.998)) ==
+#'     c("02", "05", "13", "49", "50")
+#'   )
+#' )
+#'
+fuel_class <- function(r){
   checkmate::assert_double(r, 0, 7, any.missing = FALSE, min.len = 1)
   r <- round(r, 2)
   sprintf(
