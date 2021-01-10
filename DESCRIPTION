@@ -1,10 +1,17 @@
 Package: coal.state
 Type: Package
-Title: Classification, basis recalculation and conventional qualimetry of fossil solid fuels
+Title: 
+    Classification, basis recalculation and conventional qualimetry of
+    fossil solid fuels
 Version: 0.1.0
-Author: Yuri Possokhov
-Maintainer: Yuri Possokhov <possokhoffM@gmail.com>
-Description:  The package provides functions for basis recalculations, unified classification according to GOST 25543, and other routines conventional for chemical laboratories of coal-mining and coke-making industries.
+Authors@R: c(
+    person("Yuri", "Possokhov", email = "possokhoff@gmail.com", role = "cre"),
+    person("Coal-Coke", "", email = "info@coal-coke.com", role = "prn"))
+Maintainer: Yuri Possokhov <possokhoff@gmail.com>
+Description:
+    The package provides functions for basis recalculations, unified 
+    classification according to GOST 25543, and other routines conventional for
+    chemical laboratories of coal-mining and coke-making industries.
 License: GPL-3
 Encoding: UTF-8
 LazyData: true

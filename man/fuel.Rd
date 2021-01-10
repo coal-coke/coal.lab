@@ -15,7 +15,7 @@ Type: [\code{double}].}
 accordance with \strong{ISO 1928}
 and recalculated on moisture ash-free basis. Type: [\code{double}].}
 
-\item{vdaf}{volatile matter yield, [\emph{\%}], measured in accordance with
+\item{vdaf}{\emph{volatile matter yield}, [\emph{\%}], measured in accordance with
 \strong{ISO 562} or \strong{ISO 5071-1} and recalculated
 on dry ash-free basis. Type: [\code{double}].}
 }
