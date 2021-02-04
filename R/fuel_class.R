@@ -2,7 +2,8 @@
 #'
 #' In accordance with
 #' \href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (\emph{Table 3})
-#' determine the class of fossil fuel by its reflectance of vitrinite.
+#' determine the class of fossil fuel (brown, or hard coal, or anthracite) by
+#' its reflectance of vitrinite.
 #'
 #' @param r
 #'   reflectance of vitrinite, [\emph{\%}], measured in accordance with

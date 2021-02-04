@@ -19,7 +19,8 @@ Identifier of fossil fuel class according to \emph{Table 3} of
 \description{
 In accordance with
 \href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (\emph{Table 3})
-determine the class of fossil fuel by its reflectance of vitrinite.
+determine the class of fossil fuel (brown, or hard coal, or anthracite) by
+its reflectance of vitrinite.
 }
 \examples{
 fuel_class(c(0.20, 0.52, 1.3, 4.99, 4.998))
