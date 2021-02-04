@@ -35,6 +35,8 @@ form the digital code of fossil fuel (brown, or hard coal, or anthracite) on
 the basis of its class, category, type, and subtype.
 }
 \examples{
+ # Consider samples of hard coals with the next laboratory
+ # measurement results:
  r0   <- c(1.1,  1.3)
  sok  <- c( 43, 76.0)
  vdaf <- c(8.4, 28.3)

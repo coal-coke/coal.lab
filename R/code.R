@@ -33,6 +33,8 @@
 #' @export
 #'
 #' @examples
+#'  # Consider samples of hard coals with the next laboratory
+#'  # measurement results:
 #'  r0   <- c(1.1,  1.3)
 #'  sok  <- c( 43, 76.0)
 #'  vdaf <- c(8.4, 28.3)
