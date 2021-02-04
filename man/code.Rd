@@ -44,6 +44,7 @@ the basis of its class, category, type, and subtype.
 
  x <- code(fuel_class(r0), fuel_cat(sok), hard_type(vdaf), hard_subtype(y))
  print(x)
+ # [1] "1140806" "1372809"
 
  # Unit test:
  stopifnot(

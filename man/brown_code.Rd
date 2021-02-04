@@ -34,21 +34,26 @@ Digital code according to \emph{Part 7} of
 \description{
 In accordance with
 \href{http://docs.cntd.ru/document/1200107843}{GOST 25543} (\emph{part 7})
-form the digital code for brown coal using results of laboratory measurements.
+form the digital code for \emph{brown coal} using results of laboratory
+measurements.
 }
 \examples{
- # Consider samples of brown coals with the next laboratory
+ # Consider four samples of brown coals with the next laboratory
  # measurement results:
- r0   <- c(.3)
- sok  <- c(6)
- wmaxaf <- c(53)
- tscdaf <- c(7)
+ r0   <- c(.24, .39, .43, .56)
+ sok  <- c(6, 78, 47, 79)
+ wmaxaf <- c(53.4, 63.9, 19.2, 24.6)
+ tscdaf <- c(7.2, 20.9, 5.3, 11.7)
 
  x <- brown_code(r0, sok, wmaxaf, tscdaf)
  print(x)
+ # [1] "0205005" "0376020" "0441005" "0572010"
 
  # Unit test:
- #stopifnot(
- #  x \%in\% coal.state:::g25543db()$hard$S1KCFx$code
- #)
+ stopifnot(
+   x \%in\% c(
+     coal.state:::g25543db()$brown$G1Ex$code,
+     coal.state:::g25543db()$brown$S3EFx$code
+   )
+ )
 }
