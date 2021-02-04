@@ -2,6 +2,7 @@
 
 export(anthracite_subtype)
 export(anthracite_type)
+export(brown_code)
 export(brown_subtype)
 export(brown_type)
 export(code)
